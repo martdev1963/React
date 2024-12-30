@@ -1,6 +1,6 @@
 C:\Users\Martin\Documents\Coding\udemy_React>npm view react version
 19.0.0
-
+https://www.markdownguide.org/cheat-sheet/
 Claude.ai Feedback:
 There are 2 issues in your code:
 The angle brackets around ReactDom.render are incorrect. Remove them:
@@ -108,4 +108,25 @@ On branch main
 Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git commit -m "include README.md and add notes"
+[main 372f456] include README.md and add notes
+ 2 files changed, 67 insertions(+)
+ create mode 100644 README.md
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ ^C
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.79 KiB | 914.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/martdev1963/React.git
+   d285bac..372f456  main -> main
 
