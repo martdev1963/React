@@ -45,3 +45,67 @@ Configuration fields: npm help 7 config
 
 npm@10.9.0 C:\Users\Martin\AppData\Roaming\npm\node_modules\npm
 -----------------------------------------------------------------------------------
+
+SHELL OUTPUT:
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git add .
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+        new file:   index2.html
+        new file:   index3.html
+        new file:   notes.txt
+
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git commit -m "first commit"
+[master (root-commit) d285bac] first commit
+ 4 files changed, 239 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 index2.html
+ create mode 100644 index3.html
+ create mode 100644 notes.txt
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git branch -M main
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git remote add origin https://github.com/martdev1963/React.git
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git push -u origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 2.74 KiB | 936.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/martdev1963/React.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Martin@DESKTOP-HTLQ9GM /cygdrive/c/users/Martin/Documents/Coding/udemy_React
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
