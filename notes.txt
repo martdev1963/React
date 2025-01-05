@@ -8,8 +8,9 @@ The angle brackets around ReactDom.render are incorrect. Remove them:
 ReactDOM is capitalized incorrectly. It should be ReactDOM not ReactDom.
 
 LATEST VID:
-4. Code Refactor
-VID_TIME: 0:01 / 3:01
+SECTION 2: Components in React
+10. Stateless Functional Components
+VID_TIME: 0:09 / 7:05
 
 -----------------------------------------------------------------------------------
 NPM Usage:
@@ -130,3 +131,4 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/martdev1963/React.git
    d285bac..372f456  main -> main
 
+https://babeljs.io/
