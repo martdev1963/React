@@ -36,10 +36,67 @@ var ColorSpectrum = function() {
     );
 }
 
+/* CHALLENGE:
+    CREATE A COMPONENT FOR ALL THE COLORS OF THE SPECTRUM AND RENDER THEM
+    TO THE DOM WITHIN ONE PARENT DIV
+*/
+var ColorRed = function() {
+    return(
+        <h1>Red</h1>
+    );
+}
+
+var ColorOrange = function() {
+    return(
+        <h1>Orange</h1>
+    );
+}
+
+var ColorYellow = function() {
+    return(
+        <h1>Yellow</h1>
+    );
+}
+
+var ColorGreen = function() {
+    return(
+        <h1>Grean</h1>
+    );
+}
+
+var ColorBlue = function() {
+    return(
+        <h1>Blue</h1>
+    );
+}
+
+var ColorIndigo = function() {
+    return(
+        <h1>Indigo</h1>
+    );
+}
+
+var ColorViolet = function() {
+    return(
+        <h1>Violet</h1>
+    );
+}
+/* END OF COMPONENTS */
+
+
 ReactDOM.render(
     // parameters...
     // REACT WHAT 
-    <ColorSpectrum/>,
+    <div> {/* all components must be embedded in a parent element */}
+        <ColorSpectrum/>
+        <ColorRed/>
+        <ColorOrange/>
+        <ColorYellow/>
+        <ColorGreen/>
+        <ColorBlue/>
+        <ColorIndigo/>
+        <ColorViolet/>
+    </div>,
     // REACT WHERE   
     document.getElementById("app")
 );
