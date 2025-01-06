@@ -23,15 +23,55 @@
             render() {
                 return(
                     <h1>Circle, Square, Rectangle</h1>
-                )
+                );
             }
         }
 
+        // CHALLENGE
+        // CREATE COMPONENTS FOR CIRCLE, SQUARE, AND RECTANGLE
+        // RENDER TO THE DOM WITHIN A PARENT DIV TAG
+        /*-----------------------------------------------------------
+                         COMPONENT CODE BLOCKS
+                                START
+        -----------------------------------------------------------*/    
+        class Circle extends React.Component {
+            render() {
+                return(
+                    <h1>Circle</h1>
+                );
+            }
+        }    
 
+        class Square extends React.Component {
+            render() {
+                return(
+                    <h1>Square</h1>
+                );
+            }
+        }  
+        
+        class Rectangle extends React.Component {
+            render() {
+                return(
+                    <h1>Rectangle</h1>
+                );
+            }
+        }  
+
+        /*-----------------------------------------------------------
+                         COMPONENT CODE BLOCKS
+                                 END
+        -----------------------------------------------------------*/    
 
     ReactDOM.render(
        // REACT WHAT, REACT WHERE
-       <Shapes/>,
+       <div> 
+        {/*PARENT DIV SERVING AS PARENT COMPONENT*/}
+            <Shapes/>
+            <Circle/>
+            <Square/>
+            <Rectangle/>
+        </div>,
        document.getElementById("app")
     );
 
