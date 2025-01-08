@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+ 
+     <!-- BABEL LIBRARY -->  
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <link rel="stylesheet" href="main.css">
+    <title>Styling Components</title>
+</head>
+<body>
+
+<!-- REACT
+----------------------------------------------------------------------
+vid_time: 0:00 / 7:05
+
+----------------------------------------------------------------------
+-->
+<div id="app">React has not rendered yet...</div>
+<script type="text/babel">
+
+
+
+/* CHALLENGE:
+
+*/
+var ColorRed = function() {
+    return(
+        <h1 className="red">Red</h1>
+    );
+}
+
+var ColorOrange = function() {
+    return(
+        <h1 className="orange">Orange</h1>
+    );
+}
+
+var ColorYellow = function() {
+    return(
+        <h1 className="yellow">Yellow</h1>
+    );
+}
+
+var ColorGreen = function() {
+    return(
+        <h1 className="green">Grean</h1>
+    );
+}
+
+var ColorBlue = function() {
+    return(
+        <h1 className="blue">Blue</h1>
+    );
+}
+
+var ColorIndigo = function() {
+    return(
+        <h1 className="indigo">Indigo</h1>
+    );
+}
+
+var ColorViolet = function() {
+    return(
+        <h1 className="violet">Violet</h1>
+    );
+}
+/* END OF COMPONENTS */
+
+
+ReactDOM.render(
+    // parameters...
+    // REACT WHAT 
+    <div> {/* all components must be embedded in a parent element */}
+        <ColorRed/>
+        <ColorOrange/>
+        <ColorYellow/>
+        <ColorGreen/>
+        <ColorBlue/>
+        <ColorIndigo/>
+        <ColorViolet/>
+    </div>,
+    // REACT WHERE   
+    document.getElementById("app")
+);
+
+
+
+
+
+
+</script>
+</body>
+</html>
