@@ -1,3 +1,7 @@
+Generate Dummy Data:
+https://randomuser.me/documentation
+https://randomapi.com/
+
 C:\Users\Martin\Documents\Coding\udemy_React>npm view react version
 19.0.0
 https://www.markdownguide.org/cheat-sheet/
