@@ -1,0 +1,31 @@
+.circle {
+    width: 120px;
+    height: 120px;
+    background: purple;
+    color: #fff;  
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    background: red;
+    color: #fff;  
+    text-align: center;
+}
+
+
+.rectangle {
+    width: 200px;
+    height: 100px;
+    background: orange;
+    color: #fff;  
+    text-align: center;
+}
+
+/*
+vid_time: 4:03 / 8:36
+17: Styling Class Compoments
+*/

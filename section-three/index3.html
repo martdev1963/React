@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+ 
+     <!-- BABEL LIBRARY -->  
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <link rel="stylesheet" href="main2.css">
+    <title>Class Components</title>
+</head>
+<body>
+    <div id="app">React hasn't rendered yet...</div>
+    <script type="text/babel">
+
+        // https://css-tricks.com/the-shapes-of-css/ 
+        // Lsn 17. Styling Class Components
+        class Shapes extends React.Component {
+            render() {
+                return(
+                    <h1>Circle, Square, Rectangle</h1>
+                );
+            }
+        }
+
+        // 
+        // 
+        // 
+        /*-----------------------------------------------------------
+                         COMPONENT CODE BLOCKS
+                                START
+        -----------------------------------------------------------*/    
+        class Circle extends React.Component {
+            render() {
+                return(
+                    <h1 className="circle">Circle</h1>
+                );
+            }
+        }    
+
+        class Square extends React.Component {
+            render() {
+                return(
+                    <h1 className="square">Square</h1>
+                );
+            }
+        }  
+        
+        class Rectangle extends React.Component {
+            render() {
+                return(
+                    <h1 className="rectangle">Rectangle</h1>
+                );
+            }
+        }  
+
+        /*-----------------------------------------------------------
+                         COMPONENT CODE BLOCKS
+                                 END
+        -----------------------------------------------------------*/    
+
+    ReactDOM.render(
+       // REACT WHAT, REACT WHERE
+       <div> 
+        {/*PARENT DIV SERVING AS PARENT COMPONENT*/}
+            <Shapes/>
+            <Circle/>
+            <Square/>
+            <Rectangle/>
+        </div>,
+       document.getElementById("app")
+    );
+
+
+    </script>
+</body>
+</html>
