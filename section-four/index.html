@@ -18,9 +18,8 @@
 
 <!-- REACT
 ----------------------------------------------------------------------
-*ex:16 STYLING WITHIN COMPONENT*
-STYLED STATELESS FUNCTIONAL COMPONENTS
-vid_time: 0:00 / 9:29
+*ex:18 Building first complex component*
+vid_time: 0:00 / 6:10
 2 Rules
 1. Create JS Object - containing the css property:value pairs
 2. Assign Object to JSX ELEMENT's style Attribute to apply style.
@@ -32,6 +31,22 @@ Next lsn: 17. Styling Class Components.
 -->
 <div id="app">React has not rendered yet...</div>
 <script type="text/babel">
+
+    // Stateless, Complex Functional Component
+    var ColorSpectrum = function(){
+        return(
+            <div>
+                {/*Components within a Component called: ColorSpectrum*/}
+                <ColorRed/>
+                <ColorOrange/>
+                <ColorYellow/>
+                <ColorGreen/>
+                <ColorBlue/>
+                <ColorIndigo/>
+                <ColorViolet/>
+            </div>
+        )
+    }
 
 /* START OF COMPONENTS */
 var ColorRed = function() {
@@ -124,19 +139,11 @@ var ColorViolet = function() {
 ReactDOM.render(
     // parameters...
     // REACT WHAT 
-    <div> {/* all components must be embedded in a parent element */}
-        <ColorRed/>
-        <ColorOrange/>
-        <ColorYellow/>
-        <ColorGreen/>
-        <ColorBlue/>
-        <ColorIndigo/>
-        <ColorViolet/>
-    </div>,
-    // REACT WHERE   
+        <ColorSpectrum/>,
+
+   // REACT WHERE   
     document.getElementById("app")
 );
-
 
 
 
