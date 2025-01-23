@@ -136,3 +136,41 @@ To https://github.com/martdev1963/React.git
    d285bac..372f456  main -> main
 
 https://babeljs.io/
+
+ /**-----------------------------------------------------------------------------------
+         *                              **DOCUMENTATION**
+         * COMPLEX COMPONENTS CONTAINING OTHER COMPONENTS (child components) 
+         * Use Stateless Functional Components when you do not need additional features of
+         * class Components.
+         * LSNs:19, 20, 21, 22
+         * Friendly Complex Component Contains all the components...
+         * Avatar Component - jsx with img
+         * UserName Component - jsx with h1 tag
+         * GetConnected Complex Component (contains its own child components;) containing:
+         * .Like Component 
+         * .Share Component
+         * .Add Component
+         * Awesome font bug fix resolution w/:
+         * https://chatgpt.com/share/67721074-f20c-8009-8db1-e3952d1cc22f
+         * NEXT LSN: 23. Object Literal Notation.
+         * Change color settings in vs code in settings.json file...
+         * https://www.youtube.com/watch?v=88BsSjG5iQQ&t=95s
+         * -----------------------------------------------------------------------------------
+        */
+
+        /**-----------------------------------------------------------------------------------
+         *                            COMPONENTS CODE BLOCK START
+         * These are Stateless Functional Components...
+         * This is the type of component you should always try to work with whenever possible.
+         * 
+         * -----------------------------------------------------------------------------------
+        */
+
+Change color settings in vs code in settings.json file...
+https://www.youtube.com/watch?v=88BsSjG5iQQ&t=95s
+
+This is the current color setting:
+
+  "editor.tokenColorCustomizations": {
+    "comments": "#828bea"
+    }
