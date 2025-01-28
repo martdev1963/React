@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <!-- Font Awesome 
+    https://fontawesome.com/icons
+    https://www.bootstrapcdn.com/fontawesome/
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <title>McHappy Music App ver:1.001 -- MAB_BATT::prgrmr</title>
+</head>
+<body>
+    <div id="app">
+        React has not rendered yet...
+    </div>
+    <script type="text/babel">
+
+
+        /**-----------------------------------------------------------------------------------
+         *                            COMPONENTS CODE BLOCK START
+         * Lsn 27: Props part 1 - Stateless Funtional Component
+         * -----------------------------------------------------------------------------------
+        */
+        
+        var Person = function(props) {
+            return(
+                <h1>Hi, {props.name}</h1> // JS object...value passed top down... 
+
+            );
+        }
+      
+
+        /**-----------------------------------------------------------------------------------
+         *                             COMPONENTS CODE BLOCK END
+         * -----------------------------------------------------------------------------------
+        */
+
+      //WHAT, WHERE parameters...
+        ReactDOM.render(
+            // Contains all the functional components...
+            <div>
+                <Person name="Marty"/>
+                <Person name="Sarah"/>
+                <Person name="Marika"/>
+                <Person name="Samuel"/>
+            </div>,
+            document.getElementById("app")
+        );
+
+
+
+    </script>
+</body>
+</html>

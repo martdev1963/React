@@ -173,4 +173,54 @@ This is the current color setting:
 
   "editor.tokenColorCustomizations": {
     "comments": "#828bea"
+
+}
+    ------------------------------**Lsn 23, 24, 25 Object Literal  Notation** START------------------------------
+
+    dot notation:  object.property =  value;
+    bracket notation: object['property'] = value;
+    Anything that isn't a primitive datatype is an object in JavaScript.
+
+    Invalid variables and a JS reserved keywords such as (function) must be surrounded with quotes... 
+    you can't do this with dot notation...this is why 
+    bracket notation still exists because it allows for this...
+    ie: car['origin year'] = 1984
+
+    This won't work in dot notation:
+    car.origin year = 1984;
+    You can however, add this property containing a space to the Object literal:
+
+    var car = {
+      
+      'origin year': 1984
+    
+
     }
+------------------------------**Lsn 23, 24, 25 Object Literal  Notation** END------------------------------
+lsn 27: 
+Props 1 - Stateless Fuctional Components:
+Props are short for properties.
+Props are a way of passing data from parent to child.
+They are a top down communication from parent top components to children bottom components.
+Props flow downard [unidirectional]
+React is said to have unidirectional data flow.
+Props are used when you need immutable data [read only].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
