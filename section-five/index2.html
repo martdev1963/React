@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <!-- Font Awesome 
+    https://fontawesome.com/icons
+    https://www.bootstrapcdn.com/fontawesome/
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <title>CLass Components Props -- MAB_BATT::prgrmr</title>
+</head>
+<body>
+    <div id="app">
+        React has not rendered yet...
+    </div>
+    <script type="text/babel">
+
+
+        /**-----------------------------------------------------------------------------------
+         *                            COMPONENTS CODE BLOCK START
+         * Lsn 28: Props part 2 - Class Component
+         * -----------------------------------------------------------------------------------
+        */
+        
+        class PersonGreeting extends React.Component {
+            render() {
+                var personStyle = { // styles the div being returned...
+                    height: 300,
+                    width: 300,
+                    backgroundColor: this.props.color
+                }
+                return(
+                    // accessing prop object with the this keyword...
+                    <div style={personStyle}>Hello, {this.props.name}!</div> 
+                );
+            }
+        }
+
+
+
+        /**-----------------------------------------------------------------------------------
+         *                             COMPONENTS CODE BLOCK END
+         * Next lsn: 29: Props part 3 - Color Spectrum Refactor
+         * -----------------------------------------------------------------------------------
+        */
+
+      //WHAT, WHERE parameters...
+        ReactDOM.render(
+            // Contains all the functional components...
+     <div>       
+     <PersonGreeting color="tomato" name="Jimmy"/>  {/*PersonGreeting is a <div> component...*/}
+        <PersonGreeting color="aqua" name="Sarah"/>
+        <PersonGreeting color="yellow" name="Andor"/>
+        <PersonGreeting color="orange" name="Jar Jar"/>
+     </div>,
+            document.getElementById("app")
+        );
+
+
+
+    </script>
+</body>
+</html>
