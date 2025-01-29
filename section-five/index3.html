@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+ 
+     <!-- BABEL LIBRARY -->  
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <!--<link rel="stylesheet" href="main.css">   link deactivated...-->
+    <title>Styling Components</title>
+</head>
+<body>
+
+<!-- REACT
+----------------------------------------------------------------------
+*lsn:29 PROPS PART 3 COLOR SPECTRUM REFACTOR*
+LSN:29 PROPS PART 3 COLOR SPECTRUM REFACTOR:
+CHALLENGE - CREATE ONE COMPONENT AND USE PROPS
+RE-CREATE THE PREVIOUS RESULTS
+Next lsn: 
+----------------------------------------------------------------------
+-->
+<div id="app">React has not rendered yet...</div>
+<script type="text/babel">
+
+/* CLASS COMPONENT START */
+class Spectral extends React.Component {
+    render() {
+        var textColor = {
+            height:100,
+            width: 100,
+            backgroundColor: this.props.color
+        }
+        return(
+            <h1 style={textColor}>Hi, {this.props.name}</h1>
+        );
+    }
+}
+/* CLASS COMPONENT END */
+
+// The functional component way to do it:
+var Color = function(props) {
+    var colorStyle = {
+            height:100,
+            width: 300,
+            backgroundColor: props.color
+    }
+    return(
+        <h1 style={colorStyle}>{props.name}</h1>
+    );
+}
+
+
+// using the functional component...
+ReactDOM.render(
+    // parameters...
+    // REACT WHAT 
+        <div>
+            <Color color="red" name="1"/>
+            <Color color="orange" name="2"/>
+            <Color color="yellow" name="3"/>
+            <Color color="green" name="4"/>
+            <Color color="blue" name="5"/>       
+            <Color color="indigo" name="6"/>
+            <Color color="violet" name="7"/>
+       </div>,
+
+   // REACT WHERE   
+    document.getElementById("app")
+);
+
+
+
+// using the class component...
+/*
+ReactDOM.render(
+    // parameters...
+    // REACT WHAT 
+        <div>
+            <Spectral color="red" name="1"/>
+            <Spectral color="orange" name="2"/>
+            <Spectral color="yellow" name="3"/>
+            <Spectral color="green" name="4"/>
+            <Spectral color="blue" name="5"/>       
+            <Spectral color="indigo" name="6"/>
+            <Spectral color="violet" name="7"/>
+       </div>,
+
+   // REACT WHERE   
+    document.getElementById("app")
+);
+*/
+
+
+
+</script>
+</body>
+</html>
