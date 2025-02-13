@@ -207,6 +207,15 @@ React is said to have unidirectional data flow.
 Props are used when you need immutable data [read only].
 
 
+-----------------------------------------------------------------------------------------------------------
+
+				**AI TOOLS**
+
+
+https://lovable.dev
+https://v0.dev/
+https://bolt.new/
+https://preview--melody-maven-profile.lovable.app/
 
 
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <!-- Font Awesome 
+    https://fontawesome.com/icons
+    https://www.bootstrapcdn.com/fontawesome/
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <title>McHappy Music App ver:1.001 -- MAB_BATT::prgrmr</title>
+</head>
+<body>
+    <div id="app">
+        React has not rendered yet...
+    </div>
+    <script type="text/babel">
+
+        /**-----------------------------------------------------------------------------------
+         *                              **DOCUMENTATION**
+         * COMPLEX COMPONENTS CONTAINING OTHER COMPONENTS (child components) 
+         * Use Stateless Functional Components when you do not need additional features of
+         * class Components.
+         * Friendly Complex Component Contains all the components...
+         * Avatar Component - jsx with img
+         * UserName Component - jsx with h1 tag
+         * GetConnected Complex Component (contains its own child components;) containing:
+         * .Like Component 
+         * .Share Component
+         * .Add Component
+         * NEXT LSN: 37. Props Project
+         * Change color settings in vs code in settings.json file...
+         * https://www.youtube.com/watch?v=88BsSjG5iQQ&t=95s
+         * -----------------------------------------------------------------------------------
+        */
+
+        /**-----------------------------------------------------------------------------------
+         *                            COMPONENTS CODE BLOCK START
+         * These are Stateless Functional Components...
+         * This is the type of component you should always try to work with whenever possible.
+         * 
+         * -----------------------------------------------------------------------------------
+        */
+
+        //**Friendly Complex Component**
+        // The Components use the stateless functional component syntax...
+        function Friendly(props) { // note props object as parameter in parent component...
+            var friendlyStyle = { 
+                display: 'inline-block',
+                margin: 20, // effects the outer space of the component...as opposed to the inner space like padding...
+                height: 300,
+                width: 200,
+                padding: 0,
+                backgroundColor: '#fff',
+                WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+                filter: "drop-shadow(0px 0px 5px #555)"
+
+            }
+            return( // returns components within the parent div complex component called Friendly...
+                <div style={friendlyStyle}>   {/*parent component housing child components...*/}
+                    <Avatar img={props.img}/>
+                    <UserName name={props.name} /> {/*using props object to pass parent component's name property to child component*/}
+                    <GetConnected/>
+                </div>
+            );
+        }
+
+        //Avatar Component (child of Friendly) 
+        function Avatar(props){
+            var avatarStyle = {
+                marginLeft: 27,
+                marginTop: 20,
+                width: 150,
+                height: 150,
+                borderRadius: "50%"
+            }
+            return(
+                // This is the only JSX element needing to be returned so no need for a parent <div>
+                <img src={props.img} alt="profile pic" style={avatarStyle}/>
+            );
+        }    
+
+        //UserName Component (child of Friendly) 
+        function UserName(props) {
+            var nameStyle = { 
+                fontSize: 24,
+                textAlign: "center",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                margin: 25
+            }
+            return(
+                <h1 style={nameStyle}>{props.name}</h1>
+            );
+        }
+
+        //**GetConnected Complex Component (child of Friendly)(contains its own child components;)**
+        function GetConnected() {
+            var GetConnectedStyle = {
+                marginLeft: 15
+            }
+            return(
+                <div style={GetConnectedStyle}>
+                {/*PARENT DIV FOR CONTAINING MULTIPLE CHILD COMPONENTS OF GetConnected Complex Component*/}
+                    <Like/>
+                    <Share/>
+                    <Add/>
+                </div>
+            );
+        }
+
+// Global Object for providing space between the like, share and add components...
+        var iconStyle = {  
+            margin: 20
+        }
+
+        //Like Component (child of GetConnected) VID_TIME: 4:08 / 6:39...bug due to discrepancy in Font Awesome CSS link
+        function Like() {
+            return(
+                <i className="fa-regular fa-thumbs-up" style={iconStyle}></i>
+            );
+        }
+
+        //Share Component (child of GetConnected)
+        function Share() {
+            return(
+                <i className="fa-solid fa-share" style={iconStyle}></i>
+            );
+        }
+
+        //Add Component (child of GetConnected)
+        function Add() {
+            return(
+                <i className="fa-solid fa-address-card" style={iconStyle}></i>
+            );
+        }
+
+        // CHALLENGE - Mass produce individual Friendly cards using props
+        // CHALLENGE 1 - Use props to pass the name of the person from ReactDOM.render() method to parent Friendly
+        // component to be received by child UserName component
+        // CHALLENGE 2 - Use props to pass the image URL from ReactDOM.render() method to parent Friendly
+        // component to be received by child Avatar component
+        // CHALLENGE 3 - Mass produce individual Friendly cards by providing props and values in our 
+        // ReactDOM.render() method
+
+        /**-----------------------------------------------------------------------------------
+         *                             COMPONENTS CODE BLOCK END
+         *
+         * 
+         * -----------------------------------------------------------------------------------
+        */
+
+      //WHAT, WHERE parameters...
+        ReactDOM.render(
+            // Contains all the functional components...
+            // property names are established in this parent component's JSX code...
+            <Friendly name="Martin" 
+                      img="unnamed.png"
+                      
+            />,
+            document.getElementById("app")
+
+
+        );
+
+
+
+    </script>
+</body>
+</html>
