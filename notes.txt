@@ -225,6 +225,48 @@ https://preview--melody-maven-profile.lovable.app/
 
 CURRENT_VID_TIME: 38: Functional Programming - Filter.
 
+*FUNCTIONAL PROGRAMMING*
+
+JavaScript can handle higher-order functions.
+A higher-order function is a function that can take another function as an argument, or that returns a function as a result.
+
+The essense of FP is really very simple, programs are built mostly with a handful of very small, very reusable, very predictable pure functions.
+A pure function always returns the same result, given the same parameters.
+
+A pure function is a function in which:
+-Given the same input, will always return the same output.
+-Produce no side effects.
+-Relies on no external state.
+
+A funtion is a chunk of code that we can apply over and over again...
+
+Array Methods:
+map()  - a functon or method on an array...
+
+Example below: cook is also a function that further processes the array being passed to the map function thus making popcorn, etc...
+map([corn, cow, chicken], cook)
+=> [popcorn, hamburger, eggs]
+
+filter([popcorn, hamburger, eggs], isVegetarian) ---thisVegetarian is a true/false filter...the function isVegetarian will return an array of veggie items only in this case...
+=> [popcorn, eggs] it returns an array in which every element has been evaluated true or false, and the true values are returned to a new array.
+
+The reduce method below has alot of customizable flexibility.
+reduce()
+
+filter() is a method, a function on arrays.
+
+Notice the function argument, in the code below, is known as the callback function which will return a new array...The original array is left untouched.
+array.filter(function(currentValue), {
+  return true;
+})
+
+What makes something, "Functinal Programming" is; passing a function to a function as an argument.
+
+
+CURRENT_VID_TIME: 39: Filter Lab
+
+
+
 
 
 

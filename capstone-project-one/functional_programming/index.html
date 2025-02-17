@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function Output</title>
+    <!--<script src="fp-example.js"></script>-->
+</head>
+<body>
+    <h1>JavaScript Function Output Example</h1>
+    <p id="output"></p>
+    <p id="grade"></p>
+    <p id="grade2"></p>
+    <h3>Same result only using a for loop</h3>
+    <p id="forLoop"></p>
+
+<script>
+
+  /**
+   * ------------------------------------------------------------------------------------------------
+   *                                       **DOCUMENTATION** 
+   *    Array Methods: filter(), map(), reduce()
+   *    Examples of Functional Programming
+   *    Using the filter() function; one of the array methods.
+   * ------------------------------------------------------------------------------------------------
+   * */  
+
+// Global array:  
+var testScores = [92, 87, 54, 63, 75, 59];
+
+// annonymous function serving as callback fuction passed to filter() function...
+// Consider the function expression below, runs on every element in the array, testScores. 
+// It will return a true/false value, for each element, and create a new array in which only the elements that
+// are true will find themselves in the new array.
+var passingTest = function func(test) {
+    return test > 60;
+}
+
+// another permutation of the above code would be:  instead, passing the annonymous function's definition as
+// an argument to the filter() function...
+var fail = testScores.filter(function func2(test) {
+    return test < 60;
+})
+
+
+// This array will contain all the passing test...this means the student is graduating.
+var graduation = testScores.filter(passingTest);
+
+console.log("The passing grades are: " + graduation); // must use concatenation operator...
+alert("The passing grades are: " + graduation + " The failing grades are: " + fail); 
+
+
+// Function to calculate the sum of two numbers 
+function calculateSum(a, b) {
+    return a + b;
+}
+
+// Using a forloop instead of the filter() method...
+var graduation2 = []; // empty array...
+for (var i = 0; i < testScores.length; i++) {
+    if (testScores[i] > 60) { // evaluating expression...
+        graduation2.push(testScores[i]);
+    }
+}
+
+
+
+
+// Objects of html elements...
+const outputElement = document.getElementById('output');
+const gradeElement = document.getElementById('grade');
+const grade2FailElement = document.getElementById('grade2');
+const grade3ForLoopElement = document.getElementById('forLoop');
+
+
+// Calculate the sum and display it in the output element
+const sum = calculateSum(5, 10);
+// showing the output via the reference variables per objects...
+outputElement.textContent = `The sum of 5 and 10 is: ${sum}`;
+gradeElement.textContent = `The passing grades are: ${graduation}`;
+grade2FailElement.textContent = `The failing grades are: ${fail}`;
+
+// output from the forloop...
+grade3ForLoopElement.textContent = `The passing grades using Forloop are: ${graduation2}`;
+</script>
+
+   
+</body>
+</html>
