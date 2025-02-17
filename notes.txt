@@ -1,6 +1,11 @@
 Generate Dummy Data:
 https://randomuser.me/documentation
 https://randomapi.com/
+My API key: O9SF-L9BX-ZST4-VGBG
+
+AI IMAGES:
+https://www.bing.com/images/search?view=detailV2&ccid=umVFeuYa&id=8205C22520429DADDB1BFAC4856AEF359CD679CF&thid=OIP.umVFeuYa-emf28UMBkK37wHaHa&mediaurl=https%3A%2F%2Fimgv3.fotor.com%2Fimages%2Fgallery%2FAI-3D-Female-Profile-Picture.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.ba65457ae61af9e99fdbc50c0642b7ef%3Frik%3Dz3nWnDXvaoXE%252bg%26pid%3DImgRaw%26r%3D0&exph=600&expw=600&q=ai+generated+profile+pic&simid=608034324964931847&form=IRPRST&ck=FDBF728B20BBA197820EB1F8A5B866DC&selectedindex=2&itb=0&cw=1145&ch=542&ajaxhist=0&ajaxserp=0&vt=0&sim=11
+
 
 C:\Users\Martin\Documents\Coding\udemy_React>npm view react version
 19.0.0
@@ -218,7 +223,7 @@ https://bolt.new/
 https://preview--melody-maven-profile.lovable.app/
 
 
-
+CURRENT_VID_TIME: 38: Functional Programming - Filter.
 
 
 
