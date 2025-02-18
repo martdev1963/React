@@ -265,6 +265,15 @@ What makes something, "Functinal Programming" is; passing a function to a functi
 
 CURRENT_VID_TIME: 39: Filter Lab
 
+Pure Functions have many beneficial properties;
+and form the foundation of functional programming. Pure functions are completely independent of ouside state,
+and as such they're inmmune to entire classes of bugs that have to do with shared mutable state.
+Their indepepndnet nature, also makes them great candidates for parrallel processing, accross many CPUs, 
+and across entire distributed computing clusters, which makes them essential for many types of scientific and 
+resource intensive, computing tasks. Pure Functions are also extremely independent and easy to move around,
+refactor and reorganize in your code, making your programs more flexible and adaptable to future changes.
+
+
 
 
 

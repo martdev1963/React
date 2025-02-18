@@ -8,11 +8,16 @@
 </head>
 <body>
     <h1>JavaScript Function Output Example</h1>
+    <h2>*LAB WORK*</h2>
     <p id="output"></p>
     <p id="grade"></p>
     <p id="grade2"></p>
     <h3>Same result only using a for loop</h3>
     <p id="forLoop"></p>
+    <h3>Weather for loop output</h3>
+    <p id="weatherArray"></p>
+    <h3>Same result only using Filter()</h3>
+    <p id="goOutsideArray"></p>
 
 <script>
 
@@ -25,15 +30,57 @@
    * ------------------------------------------------------------------------------------------------
    * */  
 
-// Global array:  
+// Global arrays:  
 var testScores = [92, 87, 54, 63, 75, 59];
+
+// 39: FILTER LAB:
+// weather array
+var weather = [72, 84, 34, 56, 92, 24, 47, 85, 72, 54];
+var goOutside = [];
+
+// for loop version of code below using filter() function
+for (var i = 0; i < weather.length; i++) {
+    if (weather[i] > 70) {
+        goOutside.push(weather[i]);
+    }
+}
+
+
+/**
+ * -------------------------------------------------------------------------------------------------
+ *                                      FUNCTION DEFINITIONS
+ *                                             START
+ * VID_TIME_STOPPED@ 5:50 / 8:29
+ * -------------------------------------------------------------------------------------------------
+*/
+
+
+// Practice Challenge:
+// Filter Method
+// Pass a function to filter method and return an array of all elements that return a value of true.
+// Reference variable of function definition...or "function expression"...
+var goOutsideWeather = function func(temp) {
+    return temp > 70;
+}
+
+// output variable
+var goOutsideTemps = weather.filter(goOutsideWeather); // passing reference variable of callback function, func()
+
+// another way and/or permutation: instead, passing the function definition of an annonymous function as an argument to the filter() function...
+var goOutside = weather.filter(function(temp) {
+    return temp > 70;
+})
+console.log("Console log of goOutside variable on LOC::69 -  " + goOutside);
+
+
+
 
 // annonymous function serving as callback fuction passed to filter() function...
 // Consider the function expression below, runs on every element in the array, testScores. 
 // It will return a true/false value, for each element, and create a new array in which only the elements that
 // are true will find themselves in the new array.
-var passingTest = function func(test) {
-    return test > 60;
+var passingTest = function func(test) {  // Note: reference variable assigned the function definition.
+    return test > 60;                    // everything is an object in JS including functions.    
 }
 
 // another permutation of the above code would be:  instead, passing the annonymous function's definition as
@@ -42,11 +89,10 @@ var fail = testScores.filter(function func2(test) {
     return test < 60;
 })
 
-
 // This array will contain all the passing test...this means the student is graduating.
 var graduation = testScores.filter(passingTest);
 
-console.log("The passing grades are: " + graduation); // must use concatenation operator...
+console.log("LOC:94 -- The passing grades are: " + graduation); // must use concatenation operator...
 alert("The passing grades are: " + graduation + " The failing grades are: " + fail); 
 
 
@@ -54,6 +100,17 @@ alert("The passing grades are: " + graduation + " The failing grades are: " + fa
 function calculateSum(a, b) {
     return a + b;
 }
+
+
+/**
+ * -------------------------------------------------------------------------------------------------
+ *                                      FUNCTION DEFINITIONS
+ *                                             END
+ * -------------------------------------------------------------------------------------------------
+*/
+
+
+
 
 // Using a forloop instead of the filter() method...
 var graduation2 = []; // empty array...
@@ -63,6 +120,11 @@ for (var i = 0; i < testScores.length; i++) {
     }
 }
 
+/**
+ * -------------------------------------------------------------------------------------------------
+ *                                             OUTPUT
+ * -------------------------------------------------------------------------------------------------
+*/
 
 
 
@@ -71,6 +133,8 @@ const outputElement = document.getElementById('output');
 const gradeElement = document.getElementById('grade');
 const grade2FailElement = document.getElementById('grade2');
 const grade3ForLoopElement = document.getElementById('forLoop');
+const weatherArray = document.getElementById('weatherArray');
+const optimalTemps = document.getElementById('goOutsideArray');
 
 
 // Calculate the sum and display it in the output element
@@ -80,8 +144,10 @@ outputElement.textContent = `The sum of 5 and 10 is: ${sum}`;
 gradeElement.textContent = `The passing grades are: ${graduation}`;
 grade2FailElement.textContent = `The failing grades are: ${fail}`;
 
-// output from the forloop...
+// output from the forloops...
 grade3ForLoopElement.textContent = `The passing grades using Forloop are: ${graduation2}`;
+weatherArray.textContent = `For loop Temperatures above 70: ${goOutside}`; 
+optimalTemps.textContent = `Temperatures above 70: ${goOutsideTemps}`;
 </script>
 
    
