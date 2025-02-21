@@ -38,6 +38,29 @@ var testScores = [92, 87, 54, 63, 75, 59];
 var weather = [72, 84, 34, 56, 92, 24, 47, 85, 72, 54];
 var goOutside = [];
 
+
+// array of objects containing 2 key/value pairs each... vid_time: 7:12/8:29
+var forecast =  [ 
+    {day: 'Monday', sun: true},
+    {day: 'Tuesday', sun: false},
+    {day: 'Wednesday', sun: false},
+    {day: 'Thursday', sun: true},
+    {day: 'Friday', sun: false},
+    {day: 'Saturday', sun: true},
+    {day: 'Sunday', sun: false}
+];
+
+var sunnyDays = [];
+    for (var i=0; i < forecast.length; i++) {
+        if (forecast[i].sun) {  // if true
+            sunnyDays.push(forecast[i]); // push the whole element at index one which is our object with both properties...
+            //console.log(sunnyDays);
+        } 
+        //console.log(sunnyDays);      
+    }
+    console.log(sunnyDays); 
+
+
 // for loop version of code below using filter() function
 for (var i = 0; i < weather.length; i++) {
     if (weather[i] > 70) {
