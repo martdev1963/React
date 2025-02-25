@@ -274,7 +274,8 @@ resource intensive, computing tasks. Pure Functions are also extremely independe
 refactor and reorganize in your code, making your programs more flexible and adaptable to future changes.
 
 
-
+NEXT LSN:
+CURRENT_VID_TIME: 0:00/7:17  40: Map
 
 
 

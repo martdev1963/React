@@ -58,7 +58,14 @@ var sunnyDays = [];
         } 
         //console.log(sunnyDays);      
     }
-    console.log(sunnyDays); 
+    console.log("this output uses the forloop LOC:54 ", sunnyDays); 
+
+
+var sunnyDays2 = forecast.filter(function(optumWeather) {
+    return optumWeather.sun;    
+})
+
+console.log("this output uses the filter() method in LOC:64 ", sunnyDays2) // console.log doesn't like the concatenation operator...
 
 
 // for loop version of code below using filter() function
@@ -73,7 +80,6 @@ for (var i = 0; i < weather.length; i++) {
  * -------------------------------------------------------------------------------------------------
  *                                      FUNCTION DEFINITIONS
  *                                             START
- * VID_TIME_STOPPED@ 5:50 / 8:29
  * -------------------------------------------------------------------------------------------------
 */
 
