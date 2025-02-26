@@ -273,11 +273,23 @@ and across entire distributed computing clusters, which makes them essential for
 resource intensive, computing tasks. Pure Functions are also extremely independent and easy to move around,
 refactor and reorganize in your code, making your programs more flexible and adaptable to future changes.
 
+A function is pure if, given the same input, it will always produce the same output.
+An example of an impure function: Math.random() returns a different output given the same input.
+We can't expect the same output even though we didn't pass any arguments.
 
-NEXT LSN:
-CURRENT_VID_TIME: 0:00/7:17  40: Map
 
+Remember, in JavaScript, functions are just like values, like any other value in JavaScript.
+Thus, We pass functions as arguments to functions.
+The map method will be attached to an array just like filter was in our last lesson.
+It creates a new array with the results of calling a provided function on every element of an array.
+Passing a function to a function makes filter(), map() and reduce() higher order functions.
 
+Every element on our original array will interact with this callback function and result in a new array.
+Map() is different from filter() in that filter() deletes values that don't evaluate to true where map() transforms values.
+Map passes all the elements and a transformed state.
+
+CURRENT LSN: 41
+CURRENT_VID_TIME: 0:00/7:09  40: Map Lab
 
 
 

@@ -33,22 +33,47 @@
 // Global arrays:  
 var testScores = [92, 87, 54, 63, 75, 59];
 
-// 39: FILTER LAB:
+// 39: FILTER() LAB:
 // weather array
 var weather = [72, 84, 34, 56, 92, 24, 47, 85, 72, 54];
-var goOutside = [];
+var goOutside = []
 
 
 // array of objects containing 2 key/value pairs each... vid_time: 7:12/8:29
-var forecast =  [ 
-    {day: 'Monday', sun: true},
-    {day: 'Tuesday', sun: false},
-    {day: 'Wednesday', sun: false},
-    {day: 'Thursday', sun: true},
-    {day: 'Friday', sun: false},
-    {day: 'Saturday', sun: true},
-    {day: 'Sunday', sun: false}
+var forecast =  [
+    {day: 'Monday', sun: true, humidity: 10},
+    {day: 'Tuesday', sun: false, humidity: 100},
+    {day: 'Wednesday', sun: false, humidity: 100},
+    {day: 'Thursday', sun: true, humidity: 25},
+    {day: 'Friday', sun: false, humidity: 100},
+    {day: 'Saturday', sun: true, humidity: 15},
+    {day: 'Sunday', sun: false, humidity: 100}
 ];
+
+// 40: Map() LAB:
+// humid array
+var humid = [];
+
+for (var i = 0; i < forecast.length; i++) {
+    humid.push(forecast[i].humidity); // access property: humidity...
+}
+console.log("This output is from forloop  in LOC:57 regarding the map() function ", humid);
+
+// Using  map()
+var humid2 = forecast.map(function(wetness) { // the parameter (wetness) can be called anything...
+    return wetness.humidity; // access property: humidity...
+})
+console.log("This output is from the map() in LOC:63 ", humid2);
+
+var numbers = [5, 10, 15, 20, 25];
+var triples = numbers.map(function(num) { // annonymous function passed as callback function to the map() function...
+    return num * 3;
+})
+console.log("This output is from the map() in LOC:69 resulting in * num by 3 ", triples);
+
+
+
+
 
 var sunnyDays = [];
     for (var i=0; i < forecast.length; i++) {
