@@ -290,7 +290,12 @@ Map passes all the elements and a transformed state.
 
 CURRENT LSN: 41
 CURRENT_VID_TIME: 0:00/7:09  40: Map Lab
-
+Higher order functions can recieve another function as an argument.
+The new array returned by map() function, will have the same length as the input array, but its contents will have bween mapped
+to a new form by the function.
+Method Chaining in JavaScript or chaining methods, also known as cascading refers to repeatedly
+calling one method after another on an object in one continuous line of code.
+This technique abounds in jQuery.
 
 
 

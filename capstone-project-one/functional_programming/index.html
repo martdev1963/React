@@ -72,6 +72,23 @@ var triples = numbers.map(function(num) { // annonymous function passed as callb
 console.log("This output is from the map() in LOC:69 resulting in * num by 3 ", triples);
 
 
+// ** LSN: 41 - Map Lab: 0:51/7:09 **
+// CHALLENGE:
+// Method Chaining in JavaScript or chaining methods , also known as cascading refers to repeatedly
+// calling one method after another on an object in one continuous line of code.
+// This technique abounds in jQuery.
+// Take an array of numbers, and double it much like how we tripled it in last lesson.
+// Then chain method map() directly to that and add one to each number in our original array.
+
+
+var doubles = numbers.map(function(num) { // annonymous function passed as callback function to the map() function...
+    return num * 2;
+}).map(function(addOne) {  // doesn't matter if you name the parameter different the 2nd time you call map()...
+    return addOne + 1; // addOne is more logical to be called num instead, just like the first parameter...
+}) // example of method chaining...
+console.log("This output is from the map() in LOC:84 resulting in * num by 3 ", doubles);
+
+// VID_STOPPED@: 3:21/7:09 - NEXT CHALLENGE:
 
 
 
