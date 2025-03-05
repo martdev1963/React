@@ -73,7 +73,7 @@ console.log("This output is from the map() in LOC:69 resulting in * num by 3 ", 
 
 
 // ** LSN: 41 - Map Lab: 0:51/7:09 **
-// CHALLENGE:
+// CHALLENGE: 1
 // Method Chaining in JavaScript or chaining methods , also known as cascading refers to repeatedly
 // calling one method after another on an object in one continuous line of code.
 // This technique abounds in jQuery.
@@ -89,6 +89,64 @@ var doubles = numbers.map(function(num) { // annonymous function passed as callb
 console.log("This output is from the map() in LOC:84 resulting in * num by 3 ", doubles);
 
 // VID_STOPPED@: 3:21/7:09 - NEXT CHALLENGE:
+// CHALLENGE: 2
+// Array of greetings:
+// Change an array of greetings to all uppercase words; transform each element into an uppercase string.
+// create empty array named, shout.
+// also save first word in the array to a variable.
+
+
+// array of lowerCase greetings...
+var greetings = ["hi", "hello", "hey", "thanks"];
+
+// array of transformed to upperCase greetings...
+var shout = greetings.map(function(salutation) { // passing function definition as an argument...
+    return salutation.toUpperCase(); // calling the toUpperCase() String Object function with the parameter object which represents a string object...
+})
+
+// code below for comparison analysis...(my grappling...)
+//var convertToUpper = function convert() {
+//    return greetings.toUpperCase(); // I used the wrong object to call the toUpperCase() function... had to use parameter: salutation which references each item in array
+//}
+
+//var shout = greetings.map(convertToUpper) // pass callback function's reference variable
+
+// CHALLENGE 2a:
+// Now change shout array items to lowercase...
+// array of transformed to lowerCase greetings...
+var whisper = shout.map(function(salutation) { // passing function definition as an argument...
+    return salutation.toLowerCase(); // calling the toLowerCase() String Object function with the parameter object which represents a string object...
+})
+
+/**--------------------------------------
+ *   OUTPUT Transformed Array Results
+ *               START        
+----------------------------------------*/
+
+//print shout array to console...
+for (var i = 0; i < shout.length; i++) {
+        console.log("CHALLENGE 2: result of converting to uppercase " ,shout[i]);
+}
+console.log("UpperCase conversion", shout);
+
+//print whisper array to console...
+for (var i = 0; i < whisper.length; i++) {
+        console.log("CHALLENGE 2a: result of converting to lowercase " ,whisper[i]);
+}
+console.log("LowerCase conversion",whisper);
+
+// use shift() method which removes an item from the front of an array...
+var hiShout = shout.shift();
+console.log("Using shift() function to show first item in shout array: ",hiShout);
+console.log("shout array after running shift()", shout);
+var hiWhisper = whisper.shift();
+console.log("Using shift() function to show first item in whisper array: ",hiWhisper);
+console.log("whisper array after running shift()",whisper);
+
+/**--------------------------------------
+ *   OUTPUT Transformed Array Results
+ *               END        
+----------------------------------------*/
 
 
 

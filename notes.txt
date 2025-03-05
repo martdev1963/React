@@ -297,6 +297,8 @@ Method Chaining in JavaScript or chaining methods, also known as cascading refer
 calling one method after another on an object in one continuous line of code.
 This technique abounds in jQuery.
 
+NEXT LSN: 42: Iterating through Lists (Map Method in React)
+vid_time: 10:10
 
 
 
