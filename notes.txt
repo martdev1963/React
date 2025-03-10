@@ -300,9 +300,14 @@ This technique abounds in jQuery.
 NEXT LSN: 42: Iterating through Lists (Map Method in React)
 vid_time: 10:10
 
+react.js:3287  Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `FamilyList`. See https://fb.me/react-warning-keys for more information.
+    in div (created by FamilyList)
+    in FamilyList
+CURRENT LSN: 43 - Iterating Through Lists part 2 Refactoring...
+vid_time: 1:59
 
-
-
+NEXT LSN: 44: Filter and Map method on an array
+vid_time: 04:20
 
 
 
