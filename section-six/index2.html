@@ -35,14 +35,20 @@
         // Create FamilyList component
         function FamilyList(props) {
 
-            // assign props.siblings to siblings variable to clean up code (optional)
-            var siblings = props.siblings;
-            // use map method on siblings array to create new array full of JSX code
-            var siblingsListItem = siblings.map(function(person) { // person parameter represents each object in siblings array
+            // assign props.siblings to siblings variable to clean up code (optional) (making it more obvious as to whats happening)
+            var siblings = props.siblings; //<--- achieves the same as LOC:41 props.siblings.map(function(person)...(alternative way to code it)
+
+            // use filter() method on siblings array to show only female siblings
+            //siblings = siblings.filter(function(person) {
+            //    return person.female;
+            //});
+
+            // code below uses "Method Chaining"...
+            var siblingsListItem = siblings.filter(function(person){
+                return person.female;
+            }).map(function(person) { // person parameter represents each object in siblings array
                 return <div key={person.id}>{person.name}</div> // the property: key is reserved by React...its a way for React to keep track of elements
                // being rendered...
-
-
             });
             return(
                 <div>{siblingsListItem}</div>
@@ -52,7 +58,9 @@
         // Alternative FamilyList component...currently commented out in the render() function below...
         function FamilyList2(props) {
             return(
-                <div>{props.siblings.map(function(person) {
+                <div>{props.siblings.filter(function(person){
+                    return person.female;        
+                }).map(function(person) {
                     return <div key={person.id}>{person.name}</div> 
                 })}</div>
             );
@@ -69,6 +77,7 @@
         // REACT WHAT - JSX
         // FamilyList Component
       
+        
         <FamilyList
         // property called siblings
             siblings = {siblings}
@@ -76,7 +85,7 @@
       
 
         // Alternative component
-        /* // commented out
+       /*  // commented out
         <FamilyList2
         // property called siblings
             siblings = {siblings}
