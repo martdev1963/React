@@ -310,8 +310,9 @@ NEXT LSN: 44: Filter and Map method on an array
 vid_time: 04:20 - DONE
 
 NEXT LSN: 45: Rendering two filtered and transformed lists to the DOM.
-vid_time: 07:15 
-
+vid_time: 07:15 - DONE
+Currently on: 46. Codepen Challenger 1.
+vid_time: 04:32
 
 
 

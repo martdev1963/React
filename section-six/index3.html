@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+
+<body>
+    <!-- 1.Getting Started from scratch -->
+    <!-- VID_TIME: 0:00 / 00:00 -->    
+    <!-- Rendering two Filtered and Transformed Lists to the DOM -->
+    <div id="app">React has not yet rendered...</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+
+        // functional component...
+        function FamilyList(props) {
+            // female filter and mapping...
+            var femaleSiblings = props.siblings.filter(function(person) {
+                return person.female; // filters out the males and return only the females...
+            }).map(function(person) {
+                return <div key={person.id}>{person.name}</div>;
+            });
+            // CHALLENGE - Use filter() and map() to generate JSX for male siblings
+            // Filter male siblings by checking for false in the female property...
+            var maleSiblings = props.siblings.filter(function(person) {
+                return !person.female; // negative logic... ! NOT operator... alt way is: return person.female == false;
+                //false is strictly equal to false...
+            }).map(function(person) {
+                return <div key={person.id}>{person.name}</div>;
+            });
+
+            return(
+               <div>
+                <h1>Female Siblings</h1> 
+                    <div>
+                        {/*Render Female Siblings*/}
+                        {femaleSiblings}
+                    </div>
+                
+                    <hr />
+                    <h1>Male Siblings</h1>
+                    <div>
+                        {/*Render Male Siblings*/}
+                        {maleSiblings}    
+                    </div>
+                </div> 
+            );
+        }
+
+        //ARRAY OF OBJECTS - 3 PROPS (ID, NAME, and FEMALE) 3 values (integer, string, boolean)
+        var siblings = [{id: 1, name: 'Chris', female: false}, {id: 2, name: 'Jeff', female: false}, 
+        {id: 3, name: 'Julie', female: true}, {id: 4, name: 'Jessica', female: true}];     
+
+        // RENDER REACT TO THE DOM -- WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+        // REACT WHAT - JSX
+        <FamilyList 
+            siblings={siblings}
+        />,
+
+        // VID_TIME: 11:00 / 12:09  
+        // REACT WHERE - DIV WITH ID OF "APP"
+        document.getElementById("app")
+
+        );
+
+    </script>
+
+
+
+
+
+</body>
+</html>
