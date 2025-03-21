@@ -311,8 +311,10 @@ vid_time: 04:20 - DONE
 
 NEXT LSN: 45: Rendering two filtered and transformed lists to the DOM.
 vid_time: 07:15 - DONE
-Currently on: 46. Codepen Challenger 1.
+Currently on: 46. Codepen Challenger 1 and 2 - DONE
 vid_time: 04:32
 
+NEXT LSN: 48: Color SPectrum Refactor
+vid_time: 06:55
 
 

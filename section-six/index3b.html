@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+
+<body>
+    <!-- https://devhints.io/react -->
+    <div id="app">React has not yet rendered...</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+
+        /**
+         * ----------------------------------------------------------------
+         *                   **CODE PEN CHALLENGES**
+         * ----------------------------------------------------------------
+        */
+        // Class component version...
+           class FamilyList extends React.Component {
+                render() {
+                    // Use filter() and map() methods on siblings array to return a div for each name property of only females...
+                    var siblingsListItem = this.props.siblings.filter(function(person) {
+                        return person.female; // filtering out all of the male values... note: filter() and map() must each return an output...
+                    }).map(function(person) {
+                        return <div key={person.id}>{person.name}</div>
+                    })
+                    return( // output of the component...
+                        <div>{siblingsListItem}</div> // first storing above code in variable and then passing variable here...
+                    );
+                }
+           } 
+
+           // alternative component solution... 
+           class FamilyList_alt extends React.Component {
+                render() {
+                    // Use filter() and map() methods on siblings array to return a div for each name property of only females...
+                    return(
+                        <div>{this.props.siblings.filter(function(person) { // embedding code into the returned <div> instead...
+                        return person.female;
+                    }).map(function(person) {
+                        return <div key={person.id}>{person.name}</div>
+                    })}</div>
+                );
+
+                }
+           } 
+
+
+
+      /*
+           class FamilyList extends React.Component {
+                render() {
+                    // Use map method on siblings array to return a div for each name property...
+                    return(
+                        <div>{this.props.siblings.map(function(person) {
+                            return <div key={person.id}>{person.name}</div>
+                        })}</div>
+                    );
+                }
+           } 
+
+       */
+
+        //ARRAY OF OBJECTS - 3 PROPS (ID, NAME, and FEMALE) 3 values (integer, string, boolean)
+        var siblings = [{id: 1, name: 'Chris', female: false}, {id: 2, name: 'Jeff', female: false}, 
+        {id: 3, name: 'Julie', female: true}, {id: 4, name: 'Jessica', female: true}];     
+
+        // RENDER REACT TO THE DOM -- WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+        // REACT WHAT - JSX
+
+        // change component name accordingly here below: FamilyList_alt or FamilyList...for LOC:44 and LOC:31...
+       <FamilyList_alt
+            siblings={siblings}
+        />,
+
+        // REACT WHERE - DIV WITH ID OF "APP"
+        document.getElementById("app")
+
+        );
+
+    </script>
+
+
+
+
+
+</body>
+</html>
