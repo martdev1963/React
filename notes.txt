@@ -314,7 +314,13 @@ vid_time: 07:15 - DONE
 Currently on: 46. Codepen Challenger 1 and 2 - DONE
 vid_time: 04:32
 
-NEXT LSN: 48: Color SPectrum Refactor
+*lsn:48 PROPS COLOR SPECTRUM REFACTOR*
+Challenge 1 - create prop of colors and assign it the 
+value of our colors array
+Challenge 2 -set up Color component to receive the array and 
+transform it with the map method
 vid_time: 06:55
+
+NEXT LSN: 50: Friendly - Filter and map two lists to the DOM.
 
 

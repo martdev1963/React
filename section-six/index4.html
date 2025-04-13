@@ -18,13 +18,15 @@
 <body>
 
 <!-- REACT
-----------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 *lsn:48 PROPS COLOR SPECTRUM REFACTOR*
 Challenge 1 - create prop of colors and assign it the 
 value of our colors array
 Challenge 2 -set up Color component to receive the array and 
-transform it with the map method
-----------------------------------------------------------------------
+transform it with the map method 
+As far as what the map() method is going to do, whatever this is,
+must be defined in the anonymous function being passed to the map() method.
+--------------------------------------------------------------------------------------
 -->
 
 <div id="app">React has not rendered yet...</div>
@@ -93,7 +95,7 @@ ReactDOM.render(
     // parameters...
     // REACT WHAT 
     // Challenge 1 - create prop of colors and assign it the value of our colors array...
-    <Color colors={colors}/>, 
+    <Color colors={colors}/>, // Color component with color property; hence the name prop,(property)
 
    // REACT WHERE   
     document.getElementById("app")
