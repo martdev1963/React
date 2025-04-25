@@ -322,5 +322,7 @@ transform it with the map method
 vid_time: 06:55
 
 NEXT LSN: 50: Friendly - Filter and map two lists to the DOM.
+Male / Female lists
 
+Next: SECTION 10 BONUS: Further React Learning
 
