@@ -314,15 +314,35 @@ vid_time: 07:15 - DONE
 Currently on: 46. Codepen Challenger 1 and 2 - DONE
 vid_time: 04:32
 
-*lsn:48 PROPS COLOR SPECTRUM REFACTOR*
+*lsn:48 PROPS COLOR SPECTRUM REFACTOR*  - DONE
 Challenge 1 - create prop of colors and assign it the 
 value of our colors array
 Challenge 2 -set up Color component to receive the array and 
 transform it with the map method
 vid_time: 06:55
 
-NEXT LSN: 50: Friendly - Filter and map two lists to the DOM.
+NEXT LSN: 50: Friendly - Filter and map two lists to the DOM.  - DONE
 Male / Female lists
 
-Next: SECTION 10 BONUS: Further React Learning
+Next LSN: 51 SECTION 10 BONUS: Further React Learning  - DONE
+
+NEXT LSN: SECTION 11: Lsn 52: Useless note taker - Intro to React Events
+Handling events with React elements is very similar to handling events on DOM elements.
+There are some syntactic differences:
+React events are named using camelCase, rather than lowercase.
+With JSX you pass a function as the event handler, rather than a string.
+
+An Event Handler is a function that should run whenever an event occurs.
+Function names best practice:
+Namaing fuctions for event handlers: This isn't a syntax rule that will break your code...
+The three guidelines to follow:
+Naming Convention:
+1. Begin with "on" or "handle"
+2. Name the DOM element.
+3. Describe the expected action.
+ie: handleButtonEdit
+pay attention to the syntax with classes, that you aren't going to use a comma between these event handlers
+or between these event handlers and the render method.
+
+NEXT LSN: SECTION 11: Lsn 53: Events Part 2
 
