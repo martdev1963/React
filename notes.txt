@@ -346,3 +346,10 @@ or between these event handlers and the render method.
 
 NEXT LSN: SECTION 11: Lsn 53: Events Part 2
 
+Event Handlers:
+1. Attached to DOM elements
+2. Assign function to event handler
+https://react.dev/reference/react-dom/components/common#mouseevent-handler
+
+NEXT LSN: SECTION 11: Lsn 54: This & Bind Lecture
+
