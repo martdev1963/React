@@ -512,6 +512,89 @@ NEXT LSN SECTION 13: State
 lsn 56: Guess my age; intro to React State
 14min.
 
+FROM SECTION 8 / index.html
+
+constructor(props) {
+  super(props);
+}
+Whenever an object is created via a class in JavaScript, JavaScript invokes the constructor function.
+React will invoke the constructor with the props and context of the component.
+The super keyword; this invokes the constructor function defined by REact.component, which executes some necessary setup.
+Its important to call super whenever we define a constructor function.
+If you would like to set a property or access 'this' inside the constructor, you need to call super().
+If a component doesn't use props or context, it's okay to not pass those along.
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    age: 'Guess My Age'
+                };
+                this.onButtonClick = this.onButtonClick.bind(this);
+            }
+
+When making React components, we come across this problem pretty much everytime we make a component with some kind of
+user interaction. This is a little tricky with ES6 classes.
+Inside the render method, the this keyword is bound to the component.
+No extra work is needed. The this keyword has the context of the component guess age giving you access to its methods.
+However, things are different inside of the constructor method. With ES6 classes, properties of the class do not 
+automatically bind to the React class instance. Anytime we define our own custom component methods for an ES6 class component, 
+we have to manually bind this to the component ourselves.
+The functions bind method allows you to specify what the this variable inside a function body should be set to.
+What we're doing here is a common JavaScript pattern.
+We're redefining the component method on button click setting it to the same function, but bound to this, the component.
+Now whenever on button click executes, 'this' will reference the component as opposed to null.
+In this senerio we just bind methods by hand in the constructor.
+
+    /**
+     * ---------------------------------------------------------------------------------------------
+     *                                  CODE REFACTOR VERSION 3
+     * Using the fat arrow function in ES6;
+     * in ES6 fat arrow functions preserve the 'this' context just when they are called
+     * And since we are in the render method, the this keyword is in reference to our component.
+     * VID_TIME: 12:30 / 13:36
+     * 
+     *----------------------------------------------------------------------------------------------
+    */
+
+Next LSN: 57. Meal Voter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'
+
+
+
 
 
 

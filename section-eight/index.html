@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+
+<body>
+    <!-- 1.Getting Started from scratch -->
+    <!-- VID_TIME: 0:00 / 00:00 -->    
+    <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT -->
+    <div id="app">React has not yet rendered...</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+        /** USE ctrl + / for commenting out and uncommenting...
+     * ------------------------------------------------------
+     *                  ORIGINAL VERSION
+     *-------------------------------------------------------
+    */    
+    //   class GuessAge extends React.Component {
+    //         //Whenever an object is created via a class in JavaScript, JavaScript invokes the constructor function.
+    //         //React will invoke the constructor with the props and context of the component.
+    //         //vid_time: 11:16 / 13:36
+    //         constructor(props) {
+    //             super(props);
+    //             this.state = {
+    //                 age: 'Guess My Age'
+    //             };
+    //             this.onButtonClick = this.onButtonClick.bind(this);
+    //         }
+    //         onButtonClick() {
+    //             this.setState({  // setState is a method in React...
+    //                 age: '37'
+    //             });
+    //         }
+    //         render() {
+    //             return(
+    //                 <div>
+    //                     <h1>Guessing Game</h1>
+    //                     <h2>{this.state.age}</h2>
+    //                     <button onClick={this.onButtonClick}>reveal my age</button>
+    //                 </div>    
+    //             );
+    //         }
+    //     } 
+ 
+
+    /** USE ctrl + / for commenting out and uncommenting...
+     * ------------------------------------------------------
+     *          CODE REFACTORED VERSION 2
+     *-------------------------------------------------------
+    */
+    // class GuessAge extends React.Component {
+    //         //Whenever an object is created via a class in JavaScript, JavaScript invokes the constructor function.
+    //         //React will invoke the constructor with the props and context of the component.
+    //         //vid_time: 11:16 / 13:36
+    //         constructor(props) {
+    //             super(props);
+    //             this.state = {
+    //                 age: 'Guess My Age'
+    //             };
+    //             //this.onButtonClick = this.onButtonClick.bind(this); <---no need for this line, acommplished same means below in eventHandler LOC:82
+    //         }
+    //         onButtonClick() {
+    //             this.setState({  // setState is a method in React...
+    //                 age: '37'
+    //             });
+    //         }
+    //         render() {
+    //             return(
+    //                 <div>
+    //                     <h1>Guessing Game</h1>
+    //                     <h2>{this.state.age}</h2>
+    //                     <button onClick={this.onButtonClick.bind(this)}>reveal my age</button> {/*LOC:82*/}
+    //                 </div>    
+    //             );
+    //         }
+    //     } 
+
+
+    /**
+     * ---------------------------------------------------------------------------------------------
+     *                                  CODE REFACTOR VERSION 3
+     * Using the fat arrow function in ES6;
+     * in ES6 fat arrow functions preserve the 'this' context just when they are called
+     * And since we are in the render method, the this keyword is in reference to our component.
+     * VID_TIME: 12:30 / 13:36
+     * 
+     *----------------------------------------------------------------------------------------------
+    */
+    class GuessAge extends React.Component {
+            //Whenever an object is created via a class in JavaScript, JavaScript invokes the constructor function.
+            //React will invoke the constructor with the props and context of the component.
+            //vid_time: 11:16 / 13:36
+            constructor(props) {
+                super(props);
+                this.state = {
+                    age: 'Guess My Age'
+                };
+            }
+            onButtonClick() {
+                this.setState({  // setState is a method in React...
+                    age: '37'
+                });
+            }
+            render() {
+                return(
+                    <div>
+                        <h1>Guessing Game</h1>
+                        <h2>{this.state.age}</h2>
+                        {/*Fat Arrow functions preserve the this context when they are called...so no need for the bind() function*/}
+                        <button onClick={() =>this.onButtonClick()}>reveal my age</button>
+                    </div>    
+                );
+            }
+        } 
+
+
+
+
+        // RENDER REACT TO THE DOM -- WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+        // REACT WHAT - JSX
+        <GuessAge/>,
+
+        // VID_TIME: 11:00 / 12:09  
+        // REACT WHERE - DIV WITH ID OF "APP"
+        document.getElementById("app")
+
+        );
+
+    </script>
+
+
+
+
+
+</body>
+</html>
