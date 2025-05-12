@@ -557,6 +557,12 @@ In this senerio we just bind methods by hand in the constructor.
     */
 
 Next LSN: 57. Meal Voter
+VID_TIME: 0:00 / 13:50
+In the code block of DinnerVote component,
+we'll start with super passing to it, props.
+Then set our state. The React API has us do this with the syntax, this.state and we set it equal to a JavaScript object.
+
+Next LSN: 58. React Forms
 
 
 

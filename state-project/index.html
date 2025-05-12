@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+
+<body style= text-align:center>
+    <!-- 1.Getting Started from scratch -->
+    <!-- VID_TIME: 0:00 / 00:00 -->    
+    <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT -->
+    <div id="app">React has not yet rendered...</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+        // CREATE CLASS COMPONENT FOR DinnerVote
+        // Will need to be a class component because we're dealin with state.
+        class DinnerVote extends React.Component {
+            //Whenever an object is created via a class in JavaScript, JavaScript invokes the constructor function.
+            //React will invoke the constructor with the props and context of the component.
+            //vid_time:
+            //https://chatgpt.com/c/68223a44-7784-8009-bd47-bcb77d108a78
+            /**
+             * Remember, our render method with the context of 'this' reaches to our component
+             * but other methods such as our constructor method don't have this built in, se we have to do this 
+             * ourselves.
+            */
+            constructor(props) {
+                super(props);
+                this.state = {
+                    votes: 0,
+                };
+                this.OnButtonAdd = this.OnButtonAdd.bind(this);  /* <------------ */
+                this.OnButtonSubtract = this.OnButtonSubtract.bind(this); /* <------------ */
+
+            }
+         
+            // add/subtract FUNCTIONS
+            OnButtonAdd() {
+                this.setState({  // setState is a method in React...
+                    votes: this.state.votes + 1
+                });
+            }
+
+            OnButtonSubtract() {
+                this.setState({  // setState is a method in React...
+                    votes: this.state.votes - 1
+                });
+            }
+
+
+            render() {
+                var DinnerVoteStyle = {
+                    // From Friendly component app...
+                    display: "inline-block",
+                    textAlign: "center",
+                    margin: 20,
+                    height: 600,
+                    width: 300,
+                    padding: 0,
+                    backgroundColor: "#FFF",
+                    WebWebKitFilter: "drop-shadow(0px 0px 5px #555)",
+                    filter: "drop-shadow(0px 0px 5px #555)"
+                }
+                
+                // style the img tag
+                var foodStyle = { 
+                    height:200,
+                    width:200,
+                    marginTop:20
+                }
+
+                return(
+                    <div style={DinnerVoteStyle}>
+                        <img src={this.props.img} alt="food image" style={foodStyle}/>
+                        <h1>Dinner Time</h1>
+                        <p>Vote Here If You Want This</p>
+                        <button onClick={this.OnButtonAdd}>+1</button> {/*adding eventHandlers*/}
+                        <p>Vote Here If You Do Not Want This</p>
+                        <button onClick={this.OnButtonSubtract}>-1</button> {/*adding eventHandlers*/}
+                        <p>Total: {this.state.votes}</p>
+                        {/*Fat Arrow functions preserve the this context when they are called...so no need for the bind() function*/}
+
+                    </div>    
+                );
+            }
+        } 
+
+
+
+
+        // RENDER REACT TO THE DOM -- WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+        // REACT WHAT - JSX
+        <div>
+            <DinnerVote img="https://images.pexels.com/photos/1833349/pexels-photo-1833349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>    
+            <DinnerVote img="https://images.pexels.com/photos/3434523/pexels-photo-3434523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
+            <DinnerVote img="https://images.pexels.com/photos/5086619/pexels-photo-5086619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
+        </div>,
+
+        // VID_TIME: 11:00 / 12:09  
+        // REACT WHERE - DIV WITH ID OF "APP"
+        document.getElementById("app")
+
+        );
+
+    </script>
+
+
+
+
+
+</body>
+</html>
