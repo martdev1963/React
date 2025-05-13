@@ -563,6 +563,38 @@ we'll start with super passing to it, props.
 Then set our state. The React API has us do this with the syntax, this.state and we set it equal to a JavaScript object.
 
 Next LSN: 58. React Forms
+In HTML form elements such as input, text, area and select typically maintain their own state and update it based on user input.
+In React, mutable state is typically kept in the state property of components only updated with set state.
+We can combine the two by making the react state the single source of truth.
+Then the React component that renders a form also controls what happens in that form on subsequent user input.
+An input form element whose value is controlled by React in this way, is called a controlled component.
+
+An input type Submit element's value attribute contains a DOM string that is used as the button's label.
+There are three different React form events:
+onchange, onInput and onSubmit
+With onChange, the behavior is different in React than it is in normal HTML.
+We're going to want this to update our state with every keystroke of our user.
+
+<form onSubmit>  - this will fire when the form is submitted.
+HOw do we know when the form is submitted? Our 2nd input tag down below:  <input type="submit" value="Submit"/>
+When its clicked on, then our onSubmit event will fire, and we'll set it equal to the JavaScript:
+<form onSubmit={this.handleSubmit}> to run a function.
+
+Next LSN: 59. Ajax Requests and the Fetch API
+VID_TIME: 18:45
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
