@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+
+    <!-- BABEL LIBRARY -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+
+<body>
+    <!-- 1.Getting Started from scratch -->
+    <!-- VID_TIME: 0:00 / 00:00 -->    
+    <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT -->
+    <div id="app">React has not yet rendered...</div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    items: []
+
+                };
+            }
+            
+            /** ==TROUBLE SHOOTING - DOCUMENTATION==
+             * special React Lifecycle method called ComponentDidMount()
+             * most common usecase: starting AJAX calls to load data for your component
+             * can call setState
+             * Troubleshooting with chatgpt: CORS issue...
+             * https://chatgpt.com/c/682a0977-6d04-8009-a690-4640c88ae7ef
+             *                  *BUG*
+             * You're likely serving your HTML from a file:// or an https:// origin — but the fetch is going to:
+               fetch('https://swapi.dev/api/people/')
+               The good news: the URL is correct and uses HTTPS.
+               The problem: If you're opening this file directly in the browser (file://...), many browsers block fetch requests due to CORS 
+               and mixed-content restrictions.
+             * Latest chatgpt fix:
+               https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_brand&utm_campaign=DEPT_SEM_Google_Brand_Acquisition_NAMER_US_Consumer_CPA_BAU_Mix&utm_term=chatgpt&gad_source=1&gad_campaignid=21714513245&gclid=CjwKCAjwravBBhBjEiwAIr30VFTQORMoAB5ZT17NftDjRVg1LIBoKQicxfHVZ2zZHEPEckPvjugN1RoCzU8QAvD_BwE&temporary-chat=true 
+               chatgpt below includes further code refactoring...includes proxy server to avoid CORS issues: still no output from swapi api
+               including no output from mirror version...
+               https://chatgpt.com/c/682a0977-6d04-8009-a690-4640c88ae7ef 
+               This url works! running it from the file ORIGIN now works using the mirror api!
+               file:///C:/Users/Martin/Documents/Coding/udemy_React/section-nine/fetch.html
+               */
+
+            componentDidMount() {
+                //fetch('http://swapi.co/api/people/') // old api endpoint...
+                //fetch('https://swapi.dev/api/people/') // latest api endpoint...
+                //fetch('http://localhost:3001/api/people') // proxy server verson...
+                fetch('https://swapi.py4e.com/api/people/') // mirror api...
+                // .then(function(response) { 
+                //     return response.json() // response is just a variable name containing data...you can name it what you want...
+   
+                // })
+                .then(response => response.json()) // convert response to JSON...
+                .then(responseData => { // responseData name can alternately be anything you want...it can be 'apples' LOL...
+                    this.setState({
+                        items: responseData.results
+                    });
+                })
+                .catch(error => {
+                    console.log('Fetching and parsing data error', error);
+                });
+            }
+
+            render() {   {/*vid_time: 16:10 / 18:45  --- pulling more content from swapi api...to run local server: npx serve . */}
+                let items = this.state.items;
+                console.log(items);
+                return(
+                <div>
+                    <h1>Star Wars Characters</h1>
+                    {items.map(function(item) {
+                        return (
+                            <div key={item.name}>
+                            <h4 >{item.name} </h4>
+                            <p>Eye Color: {item.eye_color}</p>
+                            <p>Gender: {item.gender}</p>
+                            <p>Hair Color: {item.hair_color}</p>
+                            <p>Height {item.height}</p>
+                            <p>Home World {item.homeworld}</p>
+                            <p>Species {item.species}</p>        
+                            </div>
+                        );            
+                    })}
+                </div> 
+                );               
+            }   
+        }
+
+
+        // RENDER REACT TO THE DOM -- WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+        // REACT WHAT - JSX
+        <App/>,
+        // vid_time:14:01 / 18:45
+
+        // REACT WHERE - DIV WITH ID OF "APP"
+        document.getElementById("app")
+
+        );
+
+    </script>
+
+
+
+
+
+</body>
+</html>

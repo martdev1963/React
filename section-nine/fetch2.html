@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's React!</title>
+
+    <!-- React 15 (as per your original) -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <!-- Tiny transparent favicon to stop 404s -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+            background: #f0f0f0;
+        }
+        h1 {
+            color: #222;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin-bottom: 0.5em;
+            padding: 0.75em 1em;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">React is loading...</div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    items: [],
+                    isLoading: true,
+                    error: null
+                };
+            }
+
+            componentDidMount() {
+                fetch('https://swapi.dev/api/people/')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        this.setState({
+                            items: data.results,
+                            isLoading: false
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Fetching failed:", error);
+                        this.setState({
+                            error,
+                            isLoading: false
+                        });
+                    });
+            }
+
+            render() {
+                const { items, isLoading, error } = this.state;
+
+                if (isLoading) {
+                    return <h2>Loading Star Wars characters...</h2>;
+                }
+
+                if (error) {
+                    return <h2>Error loading data: {error.message}</h2>;
+                }
+
+                return (
+                    <div>
+                        <h1>Star Wars Characters</h1>
+                        <ul>
+                            {items.map((person, index) => (
+                                <li key={index}>{person.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+</body>
+</html>

@@ -582,7 +582,45 @@ When its clicked on, then our onSubmit event will fire, and we'll set it equal t
 
 Next LSN: 59. Ajax Requests and the Fetch API
 VID_TIME: 18:45
+Ajax with React and Lifecycle Events (methods)
 
+AJAX statns for Asynchronouse JavaScriptAndXML.
+In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers.
+It can send and receive information in various formats, including JSON, XML, HTML, and text files.
+AJAX's most appealing characteristic is it's 'asynchronous' nature, which means it can communicate with the server, exchange data, 
+and update the page without having to refresh the page.
+
+The two major features of AJAX allow you to do the following:
+1. Make requests to teh server without reloading the page
+2. Receive and work with data from the server
+
+React Syntax
+JavaScript Method - fetch()
+Library - Axios
+
+Current app features a list of names of Star Wars characters.
+It gets the data from a third party API.
+
+What is an API? - An application program interface (API) is a set of routines, protocols, and tools for building software applications.
+Basically, an API specifies how software components should interact.
+SWAPI - Star Wars API
+https://pipedream.com/apps/swapi
+vid_time: 5:23 / 18:45
+
+Special React Lifecycle methods:
+The ComponentDidMount() method.
+When it comes to React lifecycle moethods, a common approach is to name them all and give brief introductions to them.
+The most common use case is Ajax calls to load data for a component and this is especially useful in that you can call setState
+in this lifecycle method as well.
+
+The fetch() method takes one mandatory argument, the path to the resource you want to fetch. (The endpoint)
+It returns a promise that resolves to the Response to that request, whether it is successful or not.
+vid_time: 8:47 / 18:45
+What is a JavaScript Promise? - 
+The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+Our Ajax call is an asynchronous operation.
+
+You then run the .then() function when this promise is kept in order to process/parse the response object data.
 
 
 
